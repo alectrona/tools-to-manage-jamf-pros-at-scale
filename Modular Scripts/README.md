@@ -1,14 +1,19 @@
-# Alectrona Automated Deployment wtih swiftDialog and SetupYourMac
+# Modular Scripts
+## [Automated Deployment with swiftDialog and SetupYourMac](#automated-deployment-with-swiftdialog-and-setupyourmac)
+## [Automated Deployment with DEPNotify](https://github.com/alectrona/automated-deployment)
+## [Remediate Jamf Protect](#remediate-jamf-protect-1)
+
+### Alectrona Automated Deployment with swiftDialog and SetupYourMac
 An easy to configure automated deployment workflow for macOS leveraging Jamf Pro and DEPNotify.
 
-## Features
+#### Features
 * Automatically downloads and installs [swiftDialog](https://github.com/bartreardon/swiftDialog) so you don't have to.
 * Allows for custom branding for your organization including downloading a custom logo of your choosing from the web to display in swiftDialog/SetupYourMac.
 * Installs [Rosetta 2](https://support.apple.com/en-us/HT211861) by default on Apple Silicon Macs prior to running Jamf Pro policies.
 * Being completely configured using Jamf Pro script parameters in a JSON, the same script can be used in multiple policies without changing the script itself.
 * Allows for a Debug Mode option so you can test the workflow without making any changes to the Mac.
 
-## Deploy with Jamf Pro
+#### Deploy with Jamf Pro
 1. Add the [automated-deployment.sh](automated-deployment.sh) script to your Jamf Pro server and set up the Parameter Labels by referencing [Jamf Pro Parameters](#jamf-pro-parameters).
 2. Create a Jamf Pro policy using the following options:
     1. Options > General > Trigger: `Enrollment Complete`.
@@ -17,7 +22,7 @@ An easy to configure automated deployment workflow for macOS leveraging Jamf Pro
     4. Scope > Define a target for the policy. *Typically in production this would be "All Computers"*.
 3. Enroll a computer and test.
 
-## Jamf Pro Parameters
+#### Jamf Pro Parameters
 When adding the script to Jamf Pro, you will configure the labels for Parameters 4 through 9 using the information below. Additionally, the descriptions below will help you populate the Parameters within your Jamf Pro policy.
 
 | Parameter | Parameter Label | Description |
@@ -30,7 +35,7 @@ When adding the script to Jamf Pro, you will configure the labels for Parameters
 | Parameter 9 | JamfPro API User | Set to your API User account with permissions to `Read` and `Update` Computers and `Read` Departments. Leaving this parameter empty will default to `false`. |
 | Parameter 10 | Encrypted API Password | Set to the encrypted password of your Jamf Pro API User. |
 
-## Policy JSON Array
+#### Policy JSON Array
 The Policy JSON Array is a specifically formatted JSON that combines SetupYourMac Status and Jamf Pro policy Custom Events. This allows you to configure just one parameter, but define many policies to execute. Consequently, this eliminates the need to have separate copies of the same script for use with different workflows within your environment. The JSON needs to be hosted at a known, accessible URL. This allows for greater flexibility with editing and deploying to other environments.
 
 Lets break down the following Policy JSON Array
@@ -54,3 +59,15 @@ Lets break down the following Policy JSON Array
 * `validation`: [ `{absolute path}` | `Local` | `Remote` | `None` ]
 
 Note: You can validate the JSON by copying everything between the beginning and ending curly braces { … } and pasting at jsonlint.com
+
+### Remediate Jamf Protect
+
+| Parameter | Parameter Label | Description |
+| ----------- | --------------- | ----------- |
+| Parameter 4 | Jamf Protect Tenant Name | https://`JamfProtectTenantName`.protect.jamfcloud.com |
+| Parameter 5 | Jamf Protect GUID | See Below |
+1. In the Protect console, go to Administrative>Downloads
+2. If not already created, follow the prompts to Generate Download URL
+3. Parse the generated URL to extract the appropriate installer GUID: 
+i.e. - Download URL: curl -f "https://yourprotectinstance.protect.jamfcloud.com/installer.pkg?1234346-ffff-1234-9876-987654321aa" -o installer.pkg
+- GUID is: 1234346-ffff-1234-9876-987654321aa
