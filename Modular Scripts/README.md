@@ -1,8 +1,6 @@
 # Alectrona Automated Deployment wtih swiftDialog and SetupYourMac
 An easy to configure automated deployment workflow for macOS leveraging Jamf Pro and DEPNotify.
 
-![Alectrona Logo](images/alectrona-logo-bird-and-text_600x139.png)
-
 ## Features
 * Automatically downloads and installs [swiftDialog](https://github.com/bartreardon/swiftDialog) so you don't have to.
 * Allows for custom branding for your organization including downloading a custom logo of your choosing from the web to display in swiftDialog/SetupYourMac.
