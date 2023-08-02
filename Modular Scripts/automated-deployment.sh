@@ -90,7 +90,7 @@ export PATH=/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin/
 # SetupYourMac Automated Enrollment
 debugMode="${4:-"true"}"                 # Debug Mode [true (default)|false]
 companyName="${5:-"Alectrona"}"
-welcomeDialog="${6:-"false"}"            # Show Welcome Dialog [true (default)|false]
+welcomeDialog="${6:-"false"}"            # Show Welcome Dialog [true|false (default)]
 completionActionOption="${7:-"wait"}"  	 # Completion Acton [wait|sleep (with seconds)|Shut Down|Restart]
 policyArrayJSONURL="$8"            		 # JSON Policy Array (https://your.available.url.json)
 reconOptions=""                          # Initialize dynamic recon options; built based on user's input at Welcome dialog
