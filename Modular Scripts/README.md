@@ -2,6 +2,8 @@
 ## [Automated Deployment with swiftDialog and SetupYourMac](#automated-deployment-with-swiftdialog-and-setupyourmac)
 ## [Automated Deployment with DEPNotify](https://github.com/alectrona/automated-deployment)
 ## [Remediate Jamf Protect](#remediate-jamf-protect-1)
+## [Nudge Post Install](#nudge-post-install)
+
 
 ### Alectrona Automated Deployment with swiftDialog and SetupYourMac
 An easy to configure automated deployment workflow for macOS leveraging Jamf Pro and DEPNotify.
@@ -71,3 +73,18 @@ Note: You can validate the JSON by copying everything between the beginning and 
 3. Parse the generated URL to extract the appropriate installer GUID: 
 i.e. - Download URL: curl -f "https://yourprotectinstance.protect.jamfcloud.com/installer.pkg?1234346-ffff-1234-9876-987654321aa" -o installer.pkg
 - GUID is: 1234346-ffff-1234-9876-987654321aa
+
+### Nudge Post Install
+Easily manage your macOS updates with Nudge and a web host JSON file.
+
+#### Features
+* Provide custom client or mass scale JSON configurations for Nudge with web hosten JSON files
+* Allows for custom or generic JSON configurations based on the JSON Nudge Array specified
+* Set Nudge to launch when you or the client prefers with Nudge LaunchAgent parameters
+
+| Parameter | Parameter Label | Description |
+| ----------- | --------------- | ----------- |
+| Parameter 4 | Reverse Domain Name Notation (i.e., "com.alectrona") |
+| Parameter 5 | Configuration Files to Reset (i.e., None (blank) | All (default) | JSON | LaunchAgent | LaunchDaemon) |
+| Parameter 6 | Configure Nudge LaunchAgent - 2 Hour (7200 seconds) by default |
+| Parameter 7 | JSON Nudge Array (https://your.available.url.json) |
