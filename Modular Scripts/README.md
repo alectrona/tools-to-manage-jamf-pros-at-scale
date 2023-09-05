@@ -2,7 +2,7 @@
 ## [Automated Deployment with swiftDialog and SetupYourMac](#automated-deployment-with-swiftdialog-and-setupyourmac)
 ## [Automated Deployment with DEPNotify](https://github.com/alectrona/automated-deployment)
 ## [Remediate Jamf Protect](#remediate-jamf-protect-1)
-## [Nudge Post Install](#nudge-post-install)
+## [Nudge Post Install](#nudge-post-install-1)
 
 
 ### Alectrona Automated Deployment with swiftDialog and SetupYourMac
