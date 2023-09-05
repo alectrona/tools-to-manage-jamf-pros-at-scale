@@ -78,7 +78,7 @@ i.e. - Download URL: curl -f "https://yourprotectinstance.protect.jamfcloud.com/
 Easily manage your macOS updates with Nudge and a web host JSON file.
 
 #### Features
-* Provide custom client or mass scale JSON configurations for Nudge with web hosten JSON files
+* Provide custom client or mass scale JSON configurations for Nudge with web hosted JSON files
 * Allows for custom or generic JSON configurations based on the JSON Nudge Array specified
 * Set Nudge to launch when you or the client prefers with Nudge LaunchAgent parameters
 
