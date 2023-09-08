@@ -160,7 +160,6 @@ function hideNudgeInLaunchpad(){
         updateScriptLog "Did not detect logged-in user"
     else
         sqlite3 $(sudo find /private/var/folders \( -name com.apple.dock.launchpad -a -user ${loggedInUser} \) 2> /dev/null)/db/db "DELETE FROM apps WHERE title='Nudge';"
-        killall Dock
         updateScriptLog "Hid Nudge in Launchpad for ${loggedInUser}"
     fi
 }
