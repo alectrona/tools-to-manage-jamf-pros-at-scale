@@ -85,6 +85,6 @@ Easily manage your macOS updates with Nudge and a web host JSON file.
 | Parameter | Parameter Label | Description |
 | ----------- | --------------- | ----------- |
 | Parameter 4 | Reverse Domain Name Notation (i.e., "com.alectrona") |
-| Parameter 5 | Configuration Files to Reset (i.e., None (blank) | All (default) | JSON | LaunchAgent | LaunchDaemon) |
+| Parameter 5 | Configuration Files to Reset (i.e., None (blank) All (default) JSON LaunchAgent LaunchDaemon) |
 | Parameter 6 | Configure Nudge LaunchAgent - 2 Hour (7200 seconds) by default |
 | Parameter 7 | JSON Nudge Array (https://your.available.url.json) |
