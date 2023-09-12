@@ -35,7 +35,7 @@ When adding the script to Jamf Pro, you will configure the labels for Parameters
 | Parameter 7 | Completion Action |Set the action to take after then enrollment has completed. Options include `wait`, `sleep (with seconds)`, `Shut Down`, or `Restart`. Leaving this parameter empty will default to `wait`. |
 | Parameter 8 | JSON Policy Array URL | A specifically formatted JSON that combines SetupYourMac Status and Jamf Pro policy Custom Events. See [Policy JSON Array](#policy-detail-json) for more details. |
 | Parameter 9 | JamfPro API User | Set to your API User account with permissions to `Read` and `Update` Computers and `Read` Departments. Leaving this parameter empty will default to `false`. |
-| Parameter 10 | Encrypted API Password | Set to the encrypted password of your Jamf Pro API User. |
+| Parameter 10 | Encrypted API Password | Set to the encrypted password of your Jamf Pro API User. Using an Ecrypted API Password will require hardcoding the 'local SALT="enterSALTfromEncrypt"' and 'local K="enterPassphrasefromEncrypt"'|
 
 #### Policy JSON Array
 The Policy JSON Array is a specifically formatted JSON that combines SetupYourMac Status and Jamf Pro policy Custom Events. This allows you to configure just one parameter, but define many policies to execute. Consequently, this eliminates the need to have separate copies of the same script for use with different workflows within your environment. The JSON needs to be hosted at a known, accessible URL. This allows for greater flexibility with editing and deploying to other environments.
