@@ -112,7 +112,7 @@ fi
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 
 apiUser="${9:-"false"}"
-encryptedApiPass="$10"
+encryptedApiPass="${10}"
 
 # Function to decrypt a parameter, will change for each environment
 function decrypt_string() {
